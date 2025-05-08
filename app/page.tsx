@@ -1,101 +1,295 @@
+import List from "@/components/About-us/List";
+import { Animated } from "@/components/Elements/Animated/Animated";
+import { ServiceCard } from "@/components/Elements/Cards/Service";
+import PlusIcon from "@/components/Elements/Icons/PlusIcon";
+import Separator from "@/components/Elements/Separator";
+import { SectionTitle } from "@/components/Elements/Title";
+import SponsorsCarousel from "@/components/Sections/Sponsors";
+import { Button } from "@/components/ui/button";
+import { ANIMATIONS } from "@/lib/constants";
+import { services } from "@/lib/source/Services";
+import { Play } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="wrapper mt-[106px]">
+      <section
+        id="hero"
+        className="bg-secondBg h-[calc(100vh-106px)] flex items-center justify-center"
+      >
+        <div className="container">
+          <div className="h-full flex items-center justify-between xl:flex-col">
+            <div className="flex flex-col gap-3 xl:my-7 xl:gap-7">
+              <SectionTitle
+                title="Sizning sevimli agentligingiz"
+                classname="xl:mx-auto"
+              />
+              <Animated animation={ANIMATIONS.FADE.LEFT}>
+                <h1 className="page_title quicksand xl:text-center">
+                  Raqamli xizmatlar <br /> & SMM{" "}
+                  <span className="text-primary">Agentligi</span>
+                </h1>
+              </Animated>
+              <Animated animation={ANIMATIONS.FADE.UP}>
+                <p className="page_desc xl:text-center">
+                  Biz bilan biznesingizni yangi darajaga olib chiqing –
+                  innovatsion SMM va raqamli texnologiyalar yordamida
+                  mijozlaringiz bilan mustahkam aloqa o‘rnating, brendingizni
+                  rivojlantiring va bozorda muvaffaqiyatga erishing.
+                </p>
+              </Animated>
+              <Animated className="flex items-center gap-2 mt-2 xl:justify-center">
+                <Link href="/contact">
+                  <Button>
+                    Ishni boshlash <PlusIcon />
+                  </Button>
+                </Link>
+                {/* <Button variant={"secondary"}>
+                  <Play /> Videoni ko'rish
+                </Button> */}
+              </Animated>
+            </div>
+            <Animated
+              animation={ANIMATIONS.FADE.LEFT}
+              className="w-[1000px] h-[500px] relative ms-2 xl:hidden"
+            >
+              <Image
+                src={`/images/home-hero.jpg`}
+                alt="Sultan Invest Quick hero image"
+                fill
+                objectFit="cover"
+              />
+            </Animated>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      <section id="about-us" className="bg-secondary py-20 pb-[300px]">
+        <Separator
+          classname="h-[80px] w-full mt-[-80px]"
+          color1="#1d1d1d"
+          color2="#051A06"
+        />
+        <div className="container pt-8">
+          <div className="flex items-center gap-8 xl:flex-col-reverse">
+            <div className="w-1/2 xl:hidden relative">
+              <img
+                src="/images/about-us-illustrator.png"
+                alt="Sultan Invest Quick about us image"
+                className="h-full"
+              />
+            </div>
+            <div className="w-1/2 xl:w-full flex flex-col gap-2 relative">
+              <SectionTitle title="Biz haqimizda" classname="z-10" />
+              <Animated animation={ANIMATIONS.FADE.DOWN}>
+                <h1 className="section_heading z-10">
+                  Biznesingizni biz bilan yanada{" "}
+                  <span className="text-primary">rivojlantiring</span>
+                </h1>
+              </Animated>
+              <Animated animation={ANIMATIONS.FADE.RIGHT}>
+                <p className="section_desc z-10">
+                  Va raqobatchilaringizdan ajralib turing, mijozlaringizga
+                  innovatsion orqali o‘ziga xos tajriba taqdim eting.
+                </p>
+              </Animated>
+              <Animated
+                animation={ANIMATIONS.FADE.LEFT}
+                className="flex flex-col my-2 z-10"
+              >
+                <List text="Qat’iy deadline" />
+                <List text="Tajribali jamoa" />
+                <List text="So’nggi rusumdagi texnikalar" />
+                <List text="Kreativ yondashuv" />
+              </Animated>
+              <Animated animation={ANIMATIONS.FADE.UP} className="z-10">
+                <Link href="/about-us">
+                  <Button>
+                    Ko'proq ma'lumot <PlusIcon />
+                  </Button>
+                </Link>
+              </Animated>
+              {/* Shapes */}
+              <Image
+                alt="About us shape 1"
+                src="/assets/shapes/wave.png"
+                width={100}
+                height={20}
+                className="absolute top-0 wave z-[1]"
+              />
+              <Image
+                alt="About us shape 2"
+                src="/assets/shapes/about-2.png"
+                width={500}
+                height={400}
+                className="absolute bottom-0 right-[-50px] rotate-[270deg] z-[1] opacity-20"
+              />
+              <Image
+                alt="About us shape 3"
+                src="/assets/shapes/about-3.png"
+                width={100}
+                height={100}
+                className="absolute bottom-0 right-[30px] z-[2] animate-spin duration-10000"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="sponsors" className="bg-secondBg py-20">
+        <Separator
+          classname="h-[80px] w-full mt-[-80px]"
+          color1="#051A06"
+          color2="#1d1d1d"
+        />
+        <div className="container pt-14">
+          <div
+            className="w-full h-[476px] lg:h-[400px] rounded-lg flex items-center justify-center flex-col gap-6 mt-[-320px] z-[11]"
+            style={{
+              background: `linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(/images/watch-bg.jpg)`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <span className="lg:hidden">+ Intro +</span>
+            <h1 className="section_heading text-center">
+              Biz bilan yaqindan tanishing
+            </h1>
+            <div className="w-[100px] h-[100px] lg:w-[80px] lg:h-[80px] rounded-full flex items-center justify-center play-video cursor-pointer bg-white">
+              <Play size={38} color="#000" />
+            </div>
+          </div>
+          <div>
+            <h2 className="text-[26px] quicksand leading-[34px] font-bold text-center my-10">
+              Mijozlarimiz bilan <span className="text-primary">tanishing</span>
+            </h2>
+            <SponsorsCarousel />
+          </div>
+        </div>
+      </section>
+      <section id="services" className="bg-secondary py-20">
+        <Separator
+          classname="h-[80px] w-full mt-[-80px]"
+          color1="#1d1d1d"
+          color2="#051A06"
+        />
+        <div className="container pt-14">
+          <div className="flex items-center justify-between gap-4 xl:flex-col xl:gap-10">
+            <div className="w-1/2 xl:w-full flex flex-col gap-3">
+              <SectionTitle title="Bizning servislar" />
+              <Animated animation={ANIMATIONS.FADE.DOWN}>
+                <h1 className="section_heading">
+                  Topshirayotgan ishingizdan{" "}
+                  <span className="text-primary">havotirlanmang</span>
+                </h1>
+              </Animated>
+              <Animated animation={ANIMATIONS.FADE.RIGHT}>
+                <p className="section_desc mt-1 mb-4">
+                  Siz faqat natijaga e’tibor qarating, qolganini biz hal qilamiz
+                </p>
+              </Animated>
+              <Animated animation={ANIMATIONS.FADE.LEFT}>
+                <Link href="/services" className="xl:hidden">
+                  <Button>
+                    Ko'proq ma'lumot <PlusIcon />
+                  </Button>
+                </Link>
+              </Animated>
+            </div>
+            <div className="w-1/2 xl:w-full">
+              <div className="grid grid-cols-2 sm:grid-cols-1 gap-[34px]">
+                {services.map((i, index) => (
+                  <Animated
+                    animation={ANIMATIONS.FADE.DOWN}
+                    delay={index % 2 && 0.2}
+                    key={i.id}
+                  >
+                    <ServiceCard
+                      id={i.id}
+                      title={i.title}
+                      text={i.text}
+                      shape={i.shape}
+                      img={i.img}
+                      lang="uzb"
+                    />
+                  </Animated>
+                ))}
+              </div>
+            </div>
+            <Link href="/services" className="hidden xl:block mt-4">
+              <Button>
+                Ko'proq ma'lumot <PlusIcon />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+      {/* <section id="portfolio" className="bg-secondBg py-20">
+        <Separator
+          classname="h-[80px] w-full mt-[-80px]"
+          color1="#051A06"
+          color2="#1d1d1d"
+        />
+        <div className="container pt-14">
+          <PortfolioCarousel />
+          <h1 className="text-[20px] leading-[28px] text-center mt-10 quicksand font-bold">
+            Loyihangiz bormi ?{" "}
+            <Link href="/contact" className="underline text-primary">
+              Bizga murojaat qiling
+            </Link>
+          </h1>
+        </div>
+      </section> */}
+      <section id="contact" className="bg-secondary py-20 pb-14">
+        <div className="container">
+          <div className="flex items-center justify-between">
+            <div className="w-1/2 xl:hidden">
+              <img
+                src="/images/contact-illustrator.png"
+                alt="Contact section illustrator"
+                className="w-[90%] h-[90%]"
+              />
+            </div>
+            <div className="w-1/2 xl:w-full flex flex-col gap-2 relative">
+              <SectionTitle title="Bizga bog'laning" classname="z-[]" />
+              <Animated animation={ANIMATIONS.FADE.DOWN}>
+                <h1 className="section_heading z-[2]">
+                  Loyihangiz bormi ? Bizga{" "}
+                  <span className="text-primary">murojaat qiling</span>
+                </h1>
+              </Animated>
+              <Animated animation={ANIMATIONS.FADE.RIGHT}>
+                <p className="section_desc mt-2 mb-4 z-[2]">
+                  Sizda qiziqish uyg’otgan bo’lsak “Bog’lanish” tugmasini bosing
+                  va o’z ma’lumotlaringizni qoldiring.Tez orada siz bilan
+                  bog’lanamiz
+                </p>
+              </Animated>
+              <Animated animation={ANIMATIONS.FADE.LEFT}>
+                <Link href="/contact" className="z-[2]">
+                  <Button>
+                    Bog'lanish <PlusIcon />
+                  </Button>
+                </Link>
+              </Animated>
+              <img
+                src="/assets/icons/phone.png"
+                alt="phone icon for contact section"
+                width={40}
+                height={50}
+                className="absolute contact-image1 z-0"
+              />
+              <img
+                src="/assets/icons/headphone.png"
+                alt="headphone icon for contact section"
+                width={40}
+                height={50}
+                className="absolute contact-image2 z-0"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
