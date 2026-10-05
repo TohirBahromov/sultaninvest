@@ -1,0 +1,17 @@
+# Runs on the VPS next to the sultanedu stack. The website itself is plain
+# files served by the host nginx; only the lead endpoint runs in Docker.
+# Values come from /opt/sultaninvest/.env (see deploy/env.production.example).
+
+name: sultaninvest
+
+services:
+  lead-api:
+    image: ghcr.io/${GHCR_OWNER:?set GHCR_OWNER in .env}/sultaninvest-lead-api:${IMAGE_TAG:-latest}
+    restart: unless-stopped
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:?set TELEGRAM_BOT_TOKEN in .env}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:?set TELEGRAM_CHAT_ID in .env}
+    # Only nginx on this machine can reach it (sultanedu uses 3000 and 8080).
+    ports:
+      - "127.0.0.1:4100:4100"
+    mem_limit: 96m

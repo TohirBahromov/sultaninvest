@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# sultaninvest.uz
 
-## Getting Started
-
-First, run the development server:
+Website of Sultan Quick Invest, a Tashkent agency for video production, SMM and web development. Static Next.js 16 export in Uzbek (`/`), Russian (`/ru`) and English (`/en`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # static site in out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | Where |
+|---|---|
+| All page copy (uz / ru / en) | `content/dictionary.ts` |
+| Services | `content/services.ts` |
+| Crew (credit roll) | `content/crew.ts` |
+| Portfolio cases | `content/work.ts` |
+| Phone, Telegram, email, address, stats, analytics ids | `content/site.ts` |
+| Visual system | `app/globals.css`, documented in `DESIGN.md` |
+| Lead form endpoint (holds the Telegram token) | `lead-api/` |
+| Deployment | `DEPLOY.md` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Owner to-do: real material
 
-## Learn More
+Each of these is a placeholder (marked `TODO(owner)` in the code). The site shows a clapperboard slate wherever media is missing.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Showreel:** `public/media/showreel.mp4` (30–90 s, 1080p, H.264, silent) and `public/media/showreel-poster.jpg`, then set `HAS_SHOWREEL = true` in `content/site.ts`.
+2. **Cases:** replace the three placeholder entries in `content/work.ts` with real projects (client, services, year, one-line summary, cover image in `public/work/`). Add a cover for Sultan Edu too.
+3. **Stats:** confirm or correct `STATS` in `content/site.ts` (currently 5+ years, 45+ projects, 1000+ videos, carried over from the old site).
+4. **Logo:** a true vector SVG to replace `public/logo.png`.
+5. **Client logos:** not shown yet; send them when you want a client strip.

@@ -38,3 +38,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# impeccable local state
+.impeccable/review/
+.impeccable/decision/
+.impeccable/config.local.json
+.impeccable/questions/
+.impeccable/mocks/
