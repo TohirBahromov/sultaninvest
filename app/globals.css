@@ -1547,3 +1547,25 @@ p {
     aspect-ratio: 4 / 3.2;
   }
 }
+
+/* ---------- Finale: on pages that end with the credits ---------- */
+
+/* Credits and end card share one black field: no rule, no other block between. */
+main:has([data-credits]) + .end-card {
+  border-top: 0;
+  padding-top: 0;
+}
+/* The logo becomes the film's final title card, alone on the screen. */
+main:has([data-credits]) + .end-card .end-card__top {
+  min-height: 78svh;
+  align-content: center;
+  margin-bottom: clamp(2rem, 6vh, 4rem);
+}
+main:has([data-credits]) + .end-card .end-card__logo {
+  width: clamp(11rem, 20vw, 15rem);
+}
+.end-card__top > *,
+.end-card__cols,
+.end-card__legal {
+  will-change: opacity, transform, filter;
+}

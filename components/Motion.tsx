@@ -105,6 +105,30 @@ export default function Motion() {
           },
         );
       });
+
+      // Finale: after the credits, the end card fades up out of black like
+      // a film's last title card, then the details follow.
+      const end = document.querySelector<HTMLElement>(".end-card");
+      if (end && document.querySelector("[data-credits]")) {
+        const logo = end.querySelector(".end-card__logo");
+        const tagline = end.querySelector(".end-card__tagline");
+        const details = end.querySelectorAll(".end-card__cols, .end-card__legal");
+        gsap
+          .timeline({ scrollTrigger: { trigger: end, start: "top bottom", end: "top top", scrub: 0.8 } })
+          .fromTo(logo, { opacity: 0, scale: 1.14, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", ease: "power2.out", duration: 1 })
+          .fromTo(tagline, { opacity: 0, y: 18, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", ease: "power2.out", duration: 0.6 }, "-=0.25");
+        gsap.fromTo(
+          details,
+          { opacity: 0, y: 36 },
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+            ease: "power2.out",
+            scrollTrigger: { trigger: details[0], start: "top bottom", end: "top 65%", scrub: 0.8 },
+          },
+        );
+      }
     });
 
     const refresh = () => ScrollTrigger.refresh();

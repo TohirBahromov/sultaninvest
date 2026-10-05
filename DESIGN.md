@@ -184,6 +184,9 @@ The honest placeholder for missing media and the services monitor. Diagonal cham
 ### Credit Roll (signature)
 Real crew grouped by discipline (tan Onest 600 heading, didone names, role beneath), centered. It is always the last scene before the end card, so the site ends when the credits end. With motion allowed it pins full-screen and scrolls upward under a masked window, stopping with the last name low on screen; otherwise it is a static list.
 
+### Finale (end card after the credits)
+On pages that end with the credits, the footer shares the credits' black field with no rule, colour change or block between them. Its logo becomes the film's last title card, alone in a ~78svh first screen. Scroll-scrubbed, it fades up out of black (opacity 0 → 1, scale 1.14 → 1, blur 14px → 0), the tagline follows the same way, then the columns and legal line rise in. Without motion everything is simply visible.
+
 ### Call Sheet
 A numbered schedule: step number in tracked caps, name in didone, text in secondary ink, rows divided by hairlines. Numbers are used only because the order is the information.
 
