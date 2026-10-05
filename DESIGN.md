@@ -121,7 +121,7 @@ Brand colors are fixed by the owner: champagne on deep forest, with black and ch
 
 ## Typography
 
-**Display Font:** Playfair 2 (not Playfair Display; fallback Times New Roman, serif), variable weight with automatic optical sizing, normal and italic. Chosen because it is the closest available match to the SQI monogram's stroke contrast.
+**Display Font:** Playfair 2 (not Playfair Display; fallback Times New Roman, serif), variable weight with automatic optical sizing, upright only. Chosen because it is the closest available match to the SQI monogram's stroke contrast.
 **UI Font:** Onest (fallback Segoe UI, system-ui), variable weight, used at 400–600.
 
 **Character:** a fashion didone whose hairlines sharpen as it grows, paired with a plain, solid grotesque that stays out of its way. Both cover Latin, Latin Extended (Uzbek o‘ g‘) and Cyrillic. The owner rejected thin, widely letter-spaced type (Jost; Ysabeau in tracked caps) as generic.
@@ -137,7 +137,7 @@ Brand colors are fixed by the owner: champagne on deep forest, with black and ch
 ### Named Rules
 **The Plain Label Rule.** If it's said, it's didone. Everything else is Onest in normal case with zero letter-spacing. No thin weights, no tracked capitals anywhere, including buttons and slate keys.
 
-**The Roman Title Rule.** Hero and page titles are roman. The second line takes the tan accent, not italic. Italic is reserved for the logline card and the end-card tagline.
+**The No Italic Rule.** Nothing on the site is set in italic: titles, loglines, taglines and slate values are all upright. Emphasis comes from the tan accent, size or weight.
 
 ## Layout
 
@@ -179,10 +179,13 @@ Square corners throughout (0): buttons, fields, slates, frames. The only round s
 - **Mobile:** under 1080px a bordered "Menu" button opens a full-screen black panel (clip-path wipe down) with didone links divided by hairlines, plus phone and Telegram buttons.
 
 ### Clapperboard Slate (signature)
-The honest placeholder for missing media and the services monitor. Diagonal champagne/charcoal sticks over a charcoal body divided into hairline cells (Scene, Prod., Roll, Take, Date, Status). Keys in 0.625rem tracked caps; values in didone sized to the slate (container units); the chalk value in tan italic. Real media, when supplied, covers the body.
+The honest placeholder for missing media and the services monitor. Diagonal champagne/charcoal sticks over a charcoal body divided into hairline cells (Scene, Prod., Roll, Take, Date, Status). Keys in 0.625rem tracked caps; values in didone sized to the slate (container units); the chalk value in tan. Real media, when supplied, covers the body.
 
 ### Credit Roll (signature)
 Real crew grouped by discipline (tan Onest 600 heading, didone names, role beneath), centered. It is always the last scene before the end card, so the site ends when the credits end. With motion allowed it pins full-screen and scrolls upward under a masked window, stopping with the last name low on screen; otherwise it is a static list.
+
+### REC readout
+Every running timecode sits beside a camera's REC light: a blinking red dot (#ff4436) and bold "REC", the only place that red is used. On phones the light stays and the digits hide. With reduced motion the dot is steady.
 
 ### Finale (end card after the credits)
 On pages that end with the credits, the footer shares the credits' black field with no rule, colour change or block between them. Its logo becomes the film's last title card, alone in a ~78svh first screen. Scroll-scrubbed, it fades up out of black (opacity 0 → 1, scale 1.14 → 1, blur 14px → 0), the tagline follows the same way, then the columns and legal line rise in. Without motion everything is simply visible.
@@ -202,7 +205,7 @@ A numbered schedule: step number in tracked caps, name in didone, text in second
 ### Don't:
 - **Don't** use stock photography; the old site's stock images were removed on purpose.
 - **Don't** round corners or add cards with shadows; frames are hairlines and slates.
-- **Don't** set the hero title in italic or use gradient text.
+- **Don't** use italic anywhere, or gradient text.
 - **Don't** put a small label above a heading; the heading carries itself.
 - **Don't** use thin weights or widely tracked capitals for any text.
 - **Don't** number lists whose order carries no meaning.

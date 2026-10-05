@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-05T16:52:41.163Z",
+  "generatedAt": "2026-10-05T17:07:51.425Z",
   "title": "Design System: Sultan Quick Invest",
   "extensions": {
     "colorMeta": {
@@ -83,6 +83,11 @@
         "role": "neutral",
         "displayName": "Error Coral",
         "canonical": "#f0a08a"
+      },
+      "rec-red": {
+        "role": "neutral",
+        "displayName": "REC Red",
+        "canonical": "#ff4436"
       }
     },
     "typographyMeta": {
@@ -197,7 +202,7 @@
       "kind": "custom",
       "description": "Signature placeholder for media not yet supplied.",
       "html": "<div class=\"ds-slate\"><div class=\"ds-sticks\"></div><div class=\"ds-body\"><div class=\"ds-cell ds-wide\"><span>Scene</span><b>Production</b></div><div class=\"ds-cell\"><span>Prod.</span><i>SQI</i></div><div class=\"ds-cell\"><span>Take</span><i>1</i></div></div></div>",
-      "css": ".ds-slate{width:22rem;background:#1d1d1d;color:#e9dbbc;box-shadow:0 2.5rem 4rem -2rem rgb(0 0 0 / .7)}.ds-sticks{height:2rem;background:repeating-linear-gradient(-55deg,#e9dbbc 0 1.6rem,#1d1d1d 1.6rem 3.2rem);border-bottom:2px solid #090b08}.ds-body{display:grid;grid-template-columns:1fr 1fr}.ds-cell{padding:.8rem 1rem;border-right:1px solid rgb(233 219 188 / .18);border-bottom:1px solid rgb(233 219 188 / .18);display:grid;gap:.4rem}.ds-wide{grid-column:1/-1;border-right:0}.ds-cell span{font:400 .625rem Onest,system-ui,sans-serif;color:#c9bc9e}.ds-cell b{font:italic 400 2rem Playfair,serif;color:#d4a276}.ds-cell i{font:normal 400 1.5rem Playfair,serif}"
+      "css": ".ds-slate{width:22rem;background:#1d1d1d;color:#e9dbbc;box-shadow:0 2.5rem 4rem -2rem rgb(0 0 0 / .7)}.ds-sticks{height:2rem;background:repeating-linear-gradient(-55deg,#e9dbbc 0 1.6rem,#1d1d1d 1.6rem 3.2rem);border-bottom:2px solid #090b08}.ds-body{display:grid;grid-template-columns:1fr 1fr}.ds-cell{padding:.8rem 1rem;border-right:1px solid rgb(233 219 188 / .18);border-bottom:1px solid rgb(233 219 188 / .18);display:grid;gap:.4rem}.ds-wide{grid-column:1/-1;border-right:0}.ds-cell span{font:400 .625rem Onest,system-ui,sans-serif;color:#c9bc9e}.ds-cell b{font:400 2rem Playfair,serif;color:#d4a276}.ds-cell i{font:normal 400 1.5rem Playfair,serif}"
     },
     {
       "name": "Credit Group",
@@ -234,8 +239,8 @@
         "section": "typography"
       },
       {
-        "name": "The Roman Title Rule",
-        "body": "Hero and page titles are roman. The second line takes the tan accent, not italic. Italic is reserved for the logline card and the end-card tagline.",
+        "name": "The No Italic Rule",
+        "body": "Nothing on the site is set in italic: titles, loglines, taglines and slate values are all upright. Emphasis comes from the tan accent, size or weight.",
         "section": "typography"
       },
       {
@@ -254,7 +259,7 @@
     "donts": [
       "Don't use stock photography; the old site's stock images were removed on purpose.",
       "Don't round corners or add cards with shadows; frames are hairlines and slates.",
-      "Don't set the hero title in italic or use gradient text.",
+      "Don't use italic anywhere, or gradient text.",
       "Don't put a small label above a heading; the heading carries itself.",
       "Don't number lists whose order carries no meaning.",
       "Don't invent clients, testimonials, results or figures; the stats in content/site.ts are marked for owner confirmation.",

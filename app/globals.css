@@ -17,6 +17,7 @@
   --rule-dark: rgb(233 219 188 / 0.18);
   --rule-light: rgb(5 26 7 / 0.22);
   --error: #f0a08a;
+  --rec-red: #ff4436; /* the camera's REC light, used only there */
 
   --font-display: var(--font-display-face), "Times New Roman", serif;
   --font-ui: var(--font-ui-face), "Segoe UI", system-ui, sans-serif;
@@ -574,7 +575,6 @@ p {
 }
 .titles__logline {
   font-family: var(--font-display);
-  font-style: italic;
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   color: var(--champagne-2);
   animation: title-card 1.5s var(--ease-out) 1.35s both;
@@ -733,9 +733,6 @@ p {
   margin-inline: auto;
   text-align: center;
   text-wrap: balance;
-}
-.intertitle__text em {
-  font-style: italic;
 }
 .intertitle__foot {
   margin-top: clamp(2.5rem, 5vw, 4rem);
@@ -965,7 +962,6 @@ p {
   overflow: hidden;
 }
 .slate__value--chalk {
-  font-style: italic;
   color: var(--tan);
   font-size: clamp(1.4rem, 9cqi, 3.5rem);
 }
@@ -1218,7 +1214,6 @@ p {
 }
 .end-card__tagline {
   font-family: var(--font-display);
-  font-style: italic;
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   color: var(--champagne-2);
 }
@@ -1568,4 +1563,35 @@ main:has([data-credits]) + .end-card .end-card__logo {
 .end-card__cols,
 .end-card__legal {
   will-change: opacity, transform, filter;
+}
+
+/* Recording indicator: a camera's REC light beside the running timecode. */
+.rec {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+.rec__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--rec-red);
+}
+.rec__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--rec-red);
+  box-shadow: 0 0 0.6rem rgb(255 59 48 / 0.6);
+  animation: rec-blink 1.2s steps(1, end) infinite;
+}
+@keyframes rec-blink {
+  50% {
+    opacity: 0.15;
+    box-shadow: none;
+  }
 }

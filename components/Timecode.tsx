@@ -2,7 +2,10 @@
 
 import { useEffect, useRef } from "react";
 
-/** A running SMPTE-style timecode (HH:MM:SS:FF at 24 fps) since the page opened. */
+/**
+ * A camera's recording readout: blinking REC light plus a running
+ * SMPTE-style timecode (HH:MM:SS:FF at 24 fps) since the page opened.
+ */
 export default function Timecode({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -23,8 +26,14 @@ export default function Timecode({ className = "" }: { className?: string }) {
   }, []);
 
   return (
-    <span ref={ref} className={`timecode ${className}`} aria-hidden="true">
-      00:00:00:00
+    <span className={`rec ${className}`} aria-hidden="true">
+      <span className="rec__badge">
+        <span className="rec__dot" />
+        REC
+      </span>
+      <span ref={ref} className="timecode">
+        00:00:00:00
+      </span>
     </span>
   );
 }

@@ -15,7 +15,6 @@ import "@/app/globals.css";
 const display = Playfair({
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: "variable",
-  style: ["normal", "italic"],
   axes: ["opsz"],
   variable: "--font-display-face",
   display: "swap",
