@@ -18,8 +18,8 @@
   --rule-light: rgb(5 26 7 / 0.22);
   --error: #f0a08a;
 
-  --font-display: var(--font-noto-serif-display), "Times New Roman", serif;
-  --font-ui: var(--font-jost), system-ui, sans-serif;
+  --font-display: var(--font-display-face), "Times New Roman", serif;
+  --font-ui: var(--font-ui-face), "Segoe UI", system-ui, sans-serif;
 
   --bar: 4rem; /* letterbox bar / header height */
   --gutter: clamp(1rem, 3.2vw, 3rem);
@@ -59,8 +59,8 @@ body {
   background: var(--black);
   color: var(--champagne);
   font-family: var(--font-ui);
-  font-weight: 400;
-  font-size: 1.0625rem;
+  font-weight: 420;
+  font-size: 1.125rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -160,8 +160,8 @@ p {
 /* Credits: the tracked caps of the logo's subline. */
 .credit {
   font-family: var(--font-ui);
-  font-weight: 400;
-  font-size: 0.75rem;
+  font-weight: 500;
+  font-size: 0.8125rem;
   line-height: 1.5;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -966,7 +966,7 @@ p {
 }
 .slate__value {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 5.6cqi, 2.25rem);
+  font-size: clamp(0.85rem, 5.6cqi, 2.25rem);
   line-height: 1.05;
   overflow-wrap: anywhere;
   overflow: hidden;
@@ -1549,4 +1549,257 @@ p {
 /* Keep each discipline in the hero credit line whole when it wraps. */
 .titles__credits .credit {
   text-wrap: balance;
+}
+
+/* ---------- Discipline objects (siblings of the slate) ---------- */
+
+.obj {
+  position: relative;
+  aspect-ratio: var(--slate-ratio, 4 / 3);
+  background: var(--charcoal);
+  color: var(--champagne);
+  box-shadow: 0 2.5rem 4rem -2rem rgb(0 0 0 / 0.7);
+  container-type: inline-size;
+  overflow: hidden;
+  display: grid;
+}
+.obj-stamp {
+  position: absolute;
+  right: 4cqi;
+  bottom: 4cqi;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--tan);
+  color: var(--tan);
+  background: var(--charcoal);
+  transform: rotate(-4deg);
+}
+
+/* Stripboard: the production schedule, read as a content plan. */
+.obj--strips {
+  grid-template-rows: auto auto 1fr;
+  padding: 4.5% 5%;
+  gap: 2cqi;
+}
+.strips__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  color: var(--champagne-2);
+}
+.strips__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 7cqi, 2.6rem);
+  line-height: 1;
+  color: var(--champagne);
+}
+.strips__aud {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.6cqi;
+  border-block: 1px solid var(--rule-dark);
+  font-size: clamp(0.55rem, 2.3cqi, 0.75rem);
+  color: var(--champagne-2);
+}
+.strips__aud span:last-child {
+  color: var(--champagne);
+  text-align: right;
+}
+.strips__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.8cqi;
+  align-content: start;
+}
+.strip {
+  display: grid;
+  grid-template-columns: 9cqi 16cqi 1fr;
+  align-items: center;
+  gap: 2cqi;
+  padding: 1.15cqi 2.4cqi;
+  font-size: clamp(0.62rem, 2.7cqi, 1rem);
+  line-height: 1.2;
+  color: var(--forest);
+  background: var(--champagne);
+}
+.strip--after-break {
+  margin-top: 1.4cqi;
+}
+.strip__day,
+.strip__type {
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.82em;
+}
+.strip__topic {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.strip--reels {
+  background: var(--tan);
+}
+.strip--stories {
+  background: #a8d5ba;
+}
+.strip--ads {
+  background: var(--umber);
+  color: var(--champagne);
+}
+
+/* Quad poster: the client gets top billing. */
+.obj--poster {
+  place-items: stretch;
+  padding: 3.5%;
+  background:
+    linear-gradient(var(--charcoal), var(--charcoal)) padding-box,
+    var(--charcoal);
+}
+.poster__inner {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--rule-dark);
+  outline: 1px solid var(--rule-dark);
+  outline-offset: -1.4cqi;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 5cqi;
+  gap: 1.2cqi;
+}
+.poster__starring {
+  color: var(--tan);
+  font-size: clamp(0.55rem, 2.4cqi, 0.8rem);
+}
+.poster__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 12cqi, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.poster__in {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.8rem, 3.4cqi, 1.3rem);
+  color: var(--champagne-2);
+}
+.poster__title {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 5cqi, 2rem);
+  line-height: 1.1;
+  max-width: 18ch;
+}
+.poster__billing {
+  margin-top: 3cqi;
+  max-width: 62cqi;
+  font-size: clamp(0.45rem, 1.6cqi, 0.62rem);
+  line-height: 1.5;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-stretch: condensed;
+  color: var(--champagne-3);
+}
+
+/* Storyboard: screens planned panel by panel. */
+.obj--board {
+  grid-template-rows: auto 1fr;
+  padding: 4.5% 5%;
+  gap: 3cqi;
+}
+.board__panels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5cqi;
+  align-items: center;
+}
+.board__panel {
+  position: relative;
+  display: grid;
+  gap: 1.6cqi;
+}
+.board__caption {
+  font-size: clamp(0.6rem, 2.5cqi, 0.9rem);
+  color: var(--champagne-2);
+  display: flex;
+  gap: 0.6em;
+  align-items: baseline;
+}
+.board__caption .credit {
+  color: var(--tan);
+  font-size: 1em;
+}
+.board__arrow {
+  position: absolute;
+  right: -3.4cqi;
+  top: 34%;
+  width: 2.8cqi;
+  height: 2.8cqi;
+  min-width: 10px;
+  min-height: 10px;
+  color: var(--tan);
+}
+.wire {
+  aspect-ratio: 10 / 14;
+  border: 1px solid var(--champagne-2);
+  padding: 1.6cqi;
+  display: grid;
+  grid-template-rows: auto 1.4fr auto 1fr;
+  gap: 1.4cqi;
+  background: rgb(233 219 188 / 0.03);
+}
+.wire span {
+  display: block;
+}
+.wire__bar {
+  height: 1.4cqi;
+  border-bottom: 1px solid var(--rule-dark);
+}
+.wire__hero {
+  background:
+    linear-gradient(to top right, transparent calc(50% - 0.5px), var(--rule-dark) 50%, transparent calc(50% + 0.5px)),
+    linear-gradient(to top left, transparent calc(50% - 0.5px), var(--rule-dark) 50%, transparent calc(50% + 0.5px));
+  border: 1px solid var(--rule-dark);
+}
+.wire__row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1cqi;
+}
+.wire__row span {
+  aspect-ratio: 1;
+  border: 1px solid var(--rule-dark);
+}
+.wire__lines {
+  background: repeating-linear-gradient(var(--rule-dark) 0 1px, transparent 1px 2.2cqi);
+}
+.wire--1 .wire__hero {
+  background: none;
+}
+.wire--1 .wire__row span {
+  background: rgb(233 219 188 / 0.08);
+}
+.wire--2 .wire__hero {
+  background: none;
+  border-style: dashed;
+}
+.wire--2 .wire__row {
+  grid-template-columns: 1fr;
+}
+.wire--2 .wire__row span {
+  aspect-ratio: auto;
+  height: 3cqi;
+  background: var(--tan);
+  border-color: var(--tan);
+}
+
+@media (max-width: 560px) {
+  .slate,
+  .obj {
+    aspect-ratio: 4 / 3.2;
+  }
 }

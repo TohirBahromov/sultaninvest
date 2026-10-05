@@ -11,7 +11,7 @@ import Statement from "../Statement";
 import Titles from "../Titles";
 import WorkFrames from "../WorkFrames";
 import { ArrowRight } from "../icons";
-import { ServiceSlate } from "../slates";
+import { ServiceObject } from "../ServiceObjects";
 
 /** "Bobur Akyulov, Abdulloh Fozilov +4": who is credited on a service. */
 export function crewLine(disciplines: string[], locale: Locale, max = 2) {
@@ -47,7 +47,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
               name: s.copy[locale].name,
               short: s.copy[locale].short,
               crew: crewLine(s.disciplines, locale),
-              slate: <ServiceSlate slug={s.slug} locale={locale} />,
+              slate: <ServiceObject slug={s.slug} locale={locale} />,
             }))}
           />
         </div>

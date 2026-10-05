@@ -16,31 +16,31 @@ colors:
   error-coral: "#f0a08a"
 typography:
   display:
-    fontFamily: "Noto Serif Display, Times New Roman, serif"
+    fontFamily: "Playfair, Times New Roman, serif"
     fontSize: "clamp(2.75rem, 7.4vw, 6rem)"
     fontWeight: 400
     lineHeight: 0.98
     letterSpacing: "-0.025em"
   headline:
-    fontFamily: "Noto Serif Display, Times New Roman, serif"
+    fontFamily: "Playfair, Times New Roman, serif"
     fontSize: "clamp(2.25rem, 5.2vw, 4.75rem)"
     fontWeight: 400
     lineHeight: 1.02
     letterSpacing: "-0.02em"
   title:
-    fontFamily: "Noto Serif Display, Times New Roman, serif"
+    fontFamily: "Playfair, Times New Roman, serif"
     fontSize: "clamp(1.75rem, 3.4vw, 3rem)"
     fontWeight: 400
     lineHeight: 1.08
   body:
-    fontFamily: "Jost, system-ui, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 400
+    fontFamily: "Ysabeau Office, Segoe UI, system-ui, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 420
     lineHeight: 1.6
   credit:
-    fontFamily: "Jost, system-ui, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 400
+    fontFamily: "Ysabeau Office, Segoe UI, system-ui, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 500
     lineHeight: 1.5
     letterSpacing: "0.26em"
 rounded:
@@ -84,7 +84,7 @@ components:
 
 Every page plays like the opening of a film. The agency is the crew, its services are the credits, and the visitor's project is the next production. Content sits on a deep forest "screen" framed by true-black letterbox bars. Between scenes the page cuts to champagne intertitle cards set in forest ink, so the experience alternates between projection and printed card instead of stacking identical dark sections.
 
-The type pairing comes straight from the SQI logo: a high-contrast didone (Noto Serif Display) for anything that is *said*, and light, widely tracked geometric caps (Jost) for anything that is *credited*: labels, roles, timecodes, buttons. Film's own working objects are the system's components. The clapperboard slate marks media that doesn't exist yet. The call sheet lays out the process. A running SMPTE timecode sits in the bars.
+The type pairing comes from the SQI logo: Playfair, a high-contrast didone whose optical-size axis reaches the monogram's hairlines, for anything that is *said*; Ysabeau Office, a humanist sans with calligraphic roots, in widely tracked caps for anything that is *credited*: labels, roles, timecodes, buttons. Film's own working objects are the system's components, one per discipline: the clapperboard slate (production), the stripboard (SMM and targeting), the quad poster (personal brand) and the storyboard (web and apps). The call sheet lays out the process. A running SMPTE timecode sits in the bars.
 
 Rejected by the owner: anything that looks like a template, anything playful or cartoonish, anything that makes a phone lag.
 
@@ -122,18 +122,18 @@ Brand colors are fixed by the owner: champagne on deep forest, with black and ch
 
 ## Typography
 
-**Display Font:** Noto Serif Display (fallback Times New Roman, serif), variable weight, normal and italic.
-**UI / Credit Font:** Jost (fallback system-ui), variable weight.
+**Display Font:** Playfair 2 (not Playfair Display; fallback Times New Roman, serif), variable weight with automatic optical sizing, normal and italic. Chosen because it is the closest available match to the SQI monogram's stroke contrast.
+**UI / Credit Font:** Ysabeau Office (fallback Segoe UI, system-ui), variable weight.
 
-**Character:** a didone with real stroke contrast echoing the SQI monogram, paired with the logo's own airy tracked sans. Both cover Latin, Latin Extended (Uzbek o‘ g‘) and Cyrillic.
+**Character:** a fashion didone whose hairlines sharpen as it grows, paired with a flared humanist sans that reads elegant in tracked caps and calm in body text. Both cover Latin, Latin Extended (Uzbek o‘ g‘) and Cyrillic. Geometric "default" sans faces (Jost, Futura-likes) were rejected by the owner as generic.
 
 ### Hierarchy
 - **Display** (400, clamp(2.75rem, 7.4vw, 6rem), 0.98): page titles and the hero title card. Max 6rem.
 - **Headline** (400, clamp(2.25rem, 5.2vw, 4.75rem), 1.02): section headings and service names in the reel list.
 - **Title** (400, clamp(1.75rem, 3.4vw, 3rem), 1.08): sub-sections, crew names (clamp(1.75rem, 3.2vw, 2.75rem)), call-sheet steps.
 - **Intertitle** (400, clamp(1.75rem, 3.6vw, 3.25rem), 1.18, max 24em, centered): the positioning statement on champagne.
-- **Body** (400, 1.0625rem, 1.6): lede at clamp(1.0625rem, 1.3vw, 1.25rem), max 38rem.
-- **Credit** (400, 0.75rem, 0.26em tracking, uppercase): nav, roles, labels, buttons (0.8125rem, 500, 0.2em).
+- **Body** (420, 1.125rem, 1.6; Ysabeau's small x-height needs the larger size): lede at clamp(1.0625rem, 1.3vw, 1.25rem), max 38rem.
+- **Credit** (500, 0.8125rem, 0.26em tracking, uppercase): nav, roles, labels, buttons (0.8125rem, 500, 0.2em).
 
 ### Named Rules
 **The Speech and Credit Rule.** If it's said, it's didone. If it's credited, it's tracked caps. Credit lines stay short: names, roles, disciplines, never paragraphs.
@@ -182,6 +182,12 @@ Square corners throughout (0): buttons, fields, slates, frames. The only round s
 ### Clapperboard Slate (signature)
 The honest placeholder for missing media and the services monitor. Diagonal champagne/charcoal sticks over a charcoal body divided into hairline cells (Scene, Prod., Roll, Take, Date, Status). Keys in 0.625rem tracked caps; values in didone sized to the slate (container units); the chalk value in tan italic. Real media, when supplied, covers the body.
 
+### Discipline Objects (signature)
+Siblings of the slate, same frame (charcoal, 4:3, slate drop shadow, sizes in container units) so they swap inside the services monitor. Their words are illustrative, never client claims. A case still in the works shows its discipline's object with a rotated tan "In post-production" stamp.
+- **Stripboard (SMM & targeting):** the production schedule as a content plan. Didone title and week, an audience line between hairlines, then horizontal strips (day, type, topic) colour-coded by format: Reels tan, Stories sage (#a8d5ba), Post champagne, Ads umber; a gap marks each new day.
+- **Quad poster (Personal brand):** landscape film poster with a double hairline frame. "Starring" in tan caps, the client's name as the biggest line, "in" in italic, the title, and a condensed all-caps billing block.
+- **Storyboard (Web & apps):** three portrait panels of wireframed screens (hairline boxes, an X for an image, tan blocks for the action) with numbered captions and tan arrows between them.
+
 ### Credit Roll (signature)
 Real crew grouped by discipline (tan tracked-caps heading, didone names, caps role beneath), centered. With motion allowed it pins full-screen and scrolls upward under a masked window; otherwise it is a static list.
 
@@ -192,7 +198,7 @@ A numbered schedule: step number in tracked caps, name in didone, text in second
 
 ### Do:
 - **Do** keep every new section on one of the two grounds: forest screen or champagne card.
-- **Do** use the slate for any image, video, or case that the owner hasn't supplied yet, labeled with its real status.
+- **Do** use the discipline's object (slate, stripboard, quad poster, storyboard) for any media the owner hasn't supplied yet, labeled with its real status.
 - **Do** credit real people by name and role; the crew is the proof of "one crew".
 - **Do** keep motion to the established grammar (soft-focus fade-up, letterbox bars, credit roll, framed-still parallax) and leave everything visible with reduced motion.
 - **Do** keep tan to one accent moment per screen.

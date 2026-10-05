@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { Jost, Noto_Serif_Display } from "next/font/google";
+import { Playfair, Ysabeau_Office } from "next/font/google";
 import type { ReactNode } from "react";
 import { getDictionary } from "@/content/dictionary";
 import { SERVICES } from "@/content/services";
@@ -10,18 +10,24 @@ import Header from "./Header";
 import Motion from "./Motion";
 import "@/app/globals.css";
 
-const display = Noto_Serif_Display({
+// Playfair 2 (not Playfair Display): its optical-size axis reaches the
+// hairline contrast of the SQI monogram at display sizes.
+const display = Playfair({
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: "variable",
   style: ["normal", "italic"],
-  variable: "--font-noto-serif-display",
+  axes: ["opsz"],
+  variable: "--font-display-face",
   display: "swap",
 });
 
-const ui = Jost({
+// A humanist sans with calligraphic roots: carries the logo's tracked
+// subline in caps and stays readable as body text.
+const ui = Ysabeau_Office({
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: "variable",
-  variable: "--font-jost",
+  style: ["normal", "italic"],
+  variable: "--font-ui-face",
   display: "swap",
 });
 

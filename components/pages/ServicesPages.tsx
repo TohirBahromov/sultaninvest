@@ -7,7 +7,8 @@ import { localePath, type Locale } from "@/lib/i18n";
 import Closing from "../Closing";
 import PageTitles from "../PageTitles";
 import { ArrowRight } from "../icons";
-import { CaseSlate, ServiceSlate } from "../slates";
+import { ServiceObject } from "../ServiceObjects";
+import { CaseSlate } from "../slates";
 
 function Who({ service, locale, label }: { service: Service; locale: Locale; label: string }) {
   const people = CREW.filter((c) => service.disciplines.includes(c.discipline));
@@ -74,7 +75,7 @@ export function ServicesPage({ locale }: { locale: Locale }) {
                 <div className="service-block__body" data-reveal>
                   <div className="frame__parallax">
                     <div data-parallax="0.06">
-                      <ServiceSlate slug={s.slug} locale={locale} />
+                      <ServiceObject slug={s.slug} locale={locale} />
                     </div>
                   </div>
                   <Deliverables items={c.deliverables} />
