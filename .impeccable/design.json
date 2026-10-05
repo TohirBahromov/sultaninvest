@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-05T16:41:43.363Z",
+  "generatedAt": "2026-10-05T16:52:41.163Z",
   "title": "Design System: Sultan Quick Invest",
   "extensions": {
     "colorMeta": {
@@ -83,11 +83,6 @@
         "role": "neutral",
         "displayName": "Error Coral",
         "canonical": "#f0a08a"
-      },
-      "stripboard-sage": {
-        "role": "neutral",
-        "displayName": "Stripboard Sage",
-        "canonical": "#a8d5ba"
       }
     },
     "typographyMeta": {
@@ -108,8 +103,8 @@
         "purpose": "Running text and ledes."
       },
       "credit": {
-        "displayName": "Credit",
-        "purpose": "Tracked caps for nav, roles, labels, buttons, timecode."
+        "displayName": "Label",
+        "purpose": "Onest 500 in normal case: nav, roles, captions, timecode."
       }
     },
     "shadows": [
@@ -172,7 +167,7 @@
       "refersTo": "button-primary",
       "description": "The one action per screen: champagne block, tracked caps, trailing arrow.",
       "html": "<button class=\"ds-btn\">Call me back <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></button>",
-      "css": ".ds-btn{display:inline-flex;align-items:center;gap:.75rem;min-height:3.25rem;padding:0 1.6rem;border:1px solid #e9dbbc;background:#e9dbbc;color:#051a07;font:500 .8125rem/1 'Ysabeau Office',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;border-radius:0;cursor:pointer;transition:background-color .25s cubic-bezier(.16,1,.3,1),border-color .25s}.ds-btn:hover{background:#d4a276;border-color:#d4a276}.ds-btn:focus-visible{outline:1px solid #d4a276;outline-offset:4px}"
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:.75rem;min-height:3.25rem;padding:0 1.6rem;border:1px solid #e9dbbc;background:#e9dbbc;color:#051a07;font:500 .8125rem/1 Onest,system-ui,sans-serif;border-radius:0;cursor:pointer;transition:background-color .25s cubic-bezier(.16,1,.3,1),border-color .25s}.ds-btn:hover{background:#d4a276;border-color:#d4a276}.ds-btn:focus-visible{outline:1px solid #d4a276;outline-offset:4px}"
     },
     {
       "name": "Ghost Button",
@@ -180,7 +175,7 @@
       "refersTo": "button-ghost",
       "description": "Secondary channel links such as Telegram.",
       "html": "<a class=\"ds-ghost\" href=\"#\">Telegram</a>",
-      "css": ".ds-ghost{display:inline-flex;align-items:center;min-height:3.25rem;padding:0 1.6rem;border:1px solid rgb(233 219 188 / .18);color:#e9dbbc;background:transparent;font:500 .8125rem/1 'Ysabeau Office',system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;transition:border-color .25s}.ds-ghost:hover{border-color:#e9dbbc}.ds-ghost:focus-visible{outline:1px solid #d4a276;outline-offset:4px}"
+      "css": ".ds-ghost{display:inline-flex;align-items:center;min-height:3.25rem;padding:0 1.6rem;border:1px solid rgb(233 219 188 / .18);color:#e9dbbc;background:transparent;font:500 .8125rem/1 Onest,system-ui,sans-serif;text-decoration:none;transition:border-color .25s}.ds-ghost:hover{border-color:#e9dbbc}.ds-ghost:focus-visible{outline:1px solid #d4a276;outline-offset:4px}"
     },
     {
       "name": "Field",
@@ -188,28 +183,28 @@
       "refersTo": "field",
       "description": "Bottom hairline field with a tracked-caps label.",
       "html": "<label class=\"ds-field\"><span>Your name</span><input placeholder=\"\"></label>",
-      "css": ".ds-field{display:grid;gap:.5rem;background:#051a07;padding:1rem;color:#c9bc9e;font:400 .75rem/1.5 'Ysabeau Office',system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase}.ds-field input{min-height:3.25rem;background:transparent;border:0;border-bottom:1px solid rgb(233 219 188 / .18);border-radius:0;color:#e9dbbc;font:400 1.125rem 'Ysabeau Office',system-ui,sans-serif;letter-spacing:0;text-transform:none}.ds-field input:focus{outline:none;border-bottom-color:#d4a276}"
+      "css": ".ds-field{display:grid;gap:.5rem;background:#051a07;padding:1rem;color:#c9bc9e;font:400 .75rem/1.5 Onest,system-ui,sans-serif;}.ds-field input{min-height:3.25rem;background:transparent;border:0;border-bottom:1px solid rgb(233 219 188 / .18);border-radius:0;color:#e9dbbc;font:400 1.125rem Onest,system-ui,sans-serif;letter-spacing:0;text-transform:none}.ds-field input:focus{outline:none;border-bottom-color:#d4a276}"
     },
     {
       "name": "Header Bar",
       "kind": "nav",
       "description": "Top letterbox bar with tracked-caps links.",
       "html": "<nav class=\"ds-nav\"><a aria-current=\"page\" href=\"#\">Services</a><a href=\"#\">Work</a><a href=\"#\">About</a><a href=\"#\">Contact</a></nav>",
-      "css": ".ds-nav{display:flex;gap:2rem;align-items:center;height:4rem;padding:0 2rem;background:#090b08;font:400 .75rem/1.5 'Ysabeau Office',system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase}.ds-nav a{color:#c9bc9e;text-decoration:none;position:relative;padding:.5rem 0}.ds-nav a:hover,.ds-nav a[aria-current]{color:#e9dbbc}.ds-nav a[aria-current]::after{content:'';position:absolute;left:0;right:.26em;bottom:.1rem;height:1px;background:#d4a276}"
+      "css": ".ds-nav{display:flex;gap:2rem;align-items:center;height:4rem;padding:0 2rem;background:#090b08;font:400 .75rem/1.5 Onest,system-ui,sans-serif;}.ds-nav a{color:#c9bc9e;text-decoration:none;position:relative;padding:.5rem 0}.ds-nav a:hover,.ds-nav a[aria-current]{color:#e9dbbc}.ds-nav a[aria-current]::after{content:'';position:absolute;left:0;right:.26em;bottom:.1rem;height:1px;background:#d4a276}"
     },
     {
       "name": "Clapperboard Slate",
       "kind": "custom",
       "description": "Signature placeholder for media not yet supplied.",
       "html": "<div class=\"ds-slate\"><div class=\"ds-sticks\"></div><div class=\"ds-body\"><div class=\"ds-cell ds-wide\"><span>Scene</span><b>Production</b></div><div class=\"ds-cell\"><span>Prod.</span><i>SQI</i></div><div class=\"ds-cell\"><span>Take</span><i>1</i></div></div></div>",
-      "css": ".ds-slate{width:22rem;background:#1d1d1d;color:#e9dbbc;box-shadow:0 2.5rem 4rem -2rem rgb(0 0 0 / .7)}.ds-sticks{height:2rem;background:repeating-linear-gradient(-55deg,#e9dbbc 0 1.6rem,#1d1d1d 1.6rem 3.2rem);border-bottom:2px solid #090b08}.ds-body{display:grid;grid-template-columns:1fr 1fr}.ds-cell{padding:.8rem 1rem;border-right:1px solid rgb(233 219 188 / .18);border-bottom:1px solid rgb(233 219 188 / .18);display:grid;gap:.4rem}.ds-wide{grid-column:1/-1;border-right:0}.ds-cell span{font:400 .625rem 'Ysabeau Office',system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#c9bc9e}.ds-cell b{font:italic 400 2rem Playfair,serif;color:#d4a276}.ds-cell i{font:normal 400 1.5rem Playfair,serif}"
+      "css": ".ds-slate{width:22rem;background:#1d1d1d;color:#e9dbbc;box-shadow:0 2.5rem 4rem -2rem rgb(0 0 0 / .7)}.ds-sticks{height:2rem;background:repeating-linear-gradient(-55deg,#e9dbbc 0 1.6rem,#1d1d1d 1.6rem 3.2rem);border-bottom:2px solid #090b08}.ds-body{display:grid;grid-template-columns:1fr 1fr}.ds-cell{padding:.8rem 1rem;border-right:1px solid rgb(233 219 188 / .18);border-bottom:1px solid rgb(233 219 188 / .18);display:grid;gap:.4rem}.ds-wide{grid-column:1/-1;border-right:0}.ds-cell span{font:400 .625rem Onest,system-ui,sans-serif;color:#c9bc9e}.ds-cell b{font:italic 400 2rem Playfair,serif;color:#d4a276}.ds-cell i{font:normal 400 1.5rem Playfair,serif}"
     },
     {
       "name": "Credit Group",
       "kind": "custom",
       "description": "One discipline in the crew credit roll.",
       "html": "<div class=\"ds-credits\"><h3>Web &amp; apps</h3><p><b>Tohir Bahromov</b><span>Web developer</span></p></div>",
-      "css": ".ds-credits{background:#090b08;color:#e9dbbc;text-align:center;padding:2rem;display:grid;gap:1.2rem}.ds-credits h3{margin:0;font:400 .75rem 'Ysabeau Office',system-ui,sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#d4a276}.ds-credits b{display:block;font:400 2.5rem/1.05 Playfair,serif}.ds-credits span{display:block;margin-top:.35rem;font:400 .75rem 'Ysabeau Office',system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#c9bc9e}"
+      "css": ".ds-credits{background:#090b08;color:#e9dbbc;text-align:center;padding:2rem;display:grid;gap:1.2rem}.ds-credits h3{margin:0;font:400 .75rem Onest,system-ui,sans-serif;color:#d4a276}.ds-credits b{display:block;font:400 2.5rem/1.05 Playfair,serif}.ds-credits span{display:block;margin-top:.35rem;font:400 .75rem Onest,system-ui,sans-serif;color:#c9bc9e}"
     }
   ],
   "narrative": {
@@ -217,7 +212,7 @@
     "overview": "Every page plays like the opening of a film. The agency is the crew, its services are the credits, and the visitor's project is the next production. Content sits on a deep forest \"screen\" framed by true-black letterbox bars. Between scenes the page cuts to champagne intertitle cards set in forest ink, so the experience alternates between projection and printed card instead of stacking identical dark sections.",
     "keyCharacteristics": [
       "Forest screen inside black letterbox bars; champagne intertitle cards between scenes.",
-      "Didone for speech, tracked caps for credits; nothing else.",
+      "Didone for speech, a plain grotesque for everything functional; never thin, tracked capitals.",
       "Square corners everywhere; hairline rules instead of boxes.",
       "Film grain over projected surfaces; no decorative gradients.",
       "One motion grammar: soft-focus fade-up, letterbox bars closing, slow vertical credit roll."
@@ -234,8 +229,8 @@
         "section": "colors"
       },
       {
-        "name": "The Speech and Credit Rule",
-        "body": "If it's said, it's didone. If it's credited, it's tracked caps. Credit lines stay short: names, roles, disciplines, never paragraphs.",
+        "name": "The Plain Label Rule",
+        "body": "If it's said, it's didone. Everything else is Onest in normal case with zero letter-spacing. No thin weights, no tracked capitals anywhere, including buttons and slate keys.",
         "section": "typography"
       },
       {
@@ -251,7 +246,7 @@
     ],
     "dos": [
       "Do keep every new section on one of the two grounds: forest screen or champagne card.",
-      "Do use the discipline's object (slate, stripboard, quad poster, storyboard) for any media the owner hasn't supplied yet, labeled with its real status.",
+      "Do use the clapperboard slate for any media the owner hasn't supplied yet, labeled with its real status.",
       "Do credit real people by name and role; the crew is the proof of \"one crew\".",
       "Do keep motion to the established grammar (soft-focus fade-up, letterbox bars, credit roll, framed-still parallax) and leave everything visible with reduced motion.",
       "Do keep tan to one accent moment per screen."
@@ -262,7 +257,8 @@
       "Don't set the hero title in italic or use gradient text.",
       "Don't put a small label above a heading; the heading carries itself.",
       "Don't number lists whose order carries no meaning.",
-      "Don't invent clients, testimonials, results or figures; the stats in content/site.ts are marked for owner confirmation."
+      "Don't invent clients, testimonials, results or figures; the stats in content/site.ts are marked for owner confirmation.",
+      "Don't use thin weights or widely tracked capitals for any text."
     ]
   }
 }

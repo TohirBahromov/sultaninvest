@@ -57,12 +57,6 @@ export function AboutPage({ locale }: { locale: Locale }) {
           </p>
         </div>
       </section>
-      <CreditRoll
-        locale={locale}
-        heading={dict.crewSection.heading}
-        intro={dict.crewSection.intro}
-        disciplines={dict.crewSection.disciplines}
-      />
       <section className="scene" aria-labelledby="process-heading">
         <div className="wrap">
           <h2 id="process-heading" className="display-l" style={{ marginBottom: "3rem" }} data-reveal>
@@ -72,6 +66,14 @@ export function AboutPage({ locale }: { locale: Locale }) {
         </div>
       </section>
       <Closing locale={locale} dict={dict} />
+
+      {/* The film ends on its credits; the end card (footer) follows. */}
+      <CreditRoll
+        locale={locale}
+        heading={dict.crewSection.heading}
+        intro={dict.crewSection.intro}
+        disciplines={dict.crewSection.disciplines}
+      />
     </>
   );
 }

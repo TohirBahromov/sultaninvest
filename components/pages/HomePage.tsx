@@ -11,7 +11,7 @@ import Statement from "../Statement";
 import Titles from "../Titles";
 import WorkFrames from "../WorkFrames";
 import { ArrowRight } from "../icons";
-import { ServiceObject } from "../ServiceObjects";
+import { ServiceSlate } from "../slates";
 
 /** "Bobur Akyulov, Abdulloh Fozilov +4": who is credited on a service. */
 export function crewLine(disciplines: string[], locale: Locale, max = 2) {
@@ -47,18 +47,11 @@ export default function HomePage({ locale }: { locale: Locale }) {
               name: s.copy[locale].name,
               short: s.copy[locale].short,
               crew: crewLine(s.disciplines, locale),
-              slate: <ServiceObject slug={s.slug} locale={locale} />,
+              slate: <ServiceSlate slug={s.slug} locale={locale} />,
             }))}
           />
         </div>
       </section>
-
-      <CreditRoll
-        locale={locale}
-        heading={dict.crewSection.heading}
-        intro={dict.crewSection.intro}
-        disciplines={dict.crewSection.disciplines}
-      />
 
       <section className="scene" aria-labelledby="work-heading">
         <div className="wrap">
@@ -90,6 +83,14 @@ export default function HomePage({ locale }: { locale: Locale }) {
       </section>
 
       <Closing locale={locale} dict={dict} />
+
+      {/* The film ends on its credits; the end card (footer) follows. */}
+      <CreditRoll
+        locale={locale}
+        heading={dict.crewSection.heading}
+        intro={dict.crewSection.intro}
+        disciplines={dict.crewSection.disciplines}
+      />
     </>
   );
 }

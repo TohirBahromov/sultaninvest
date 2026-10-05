@@ -2,7 +2,6 @@ import type { Case } from "@/content/work";
 import type { Locale } from "@/lib/i18n";
 import { SERVICES, type ServiceSlug } from "@/content/services";
 import Slate from "./Slate";
-import { ServiceObject } from "./ServiceObjects";
 
 const YEAR = new Date().getFullYear();
 const ROLL: Record<ServiceSlug, string> = { production: "A", smm: "B", "personal-brand": "C", web: "D" };
@@ -39,14 +38,6 @@ export function CaseSlate({
   ratio?: string;
 }) {
   const scene = c.services.map((s) => serviceName(s, locale)).join(" · ");
-  // A case still in the works shows its discipline's own object, stamped.
-  if (c.placeholder && c.services[0] !== "production") {
-    return (
-      <div style={{ "--slate-ratio": ratio } as React.CSSProperties}>
-        <ServiceObject slug={c.services[0]} locale={locale} status />
-      </div>
-    );
-  }
   if (c.placeholder) {
     return (
       <Slate

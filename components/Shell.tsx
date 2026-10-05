@@ -1,5 +1,5 @@
 import Script from "next/script";
-import { Playfair, Ysabeau_Office } from "next/font/google";
+import { Onest, Playfair } from "next/font/google";
 import type { ReactNode } from "react";
 import { getDictionary } from "@/content/dictionary";
 import { SERVICES } from "@/content/services";
@@ -21,12 +21,11 @@ const display = Playfair({
   display: "swap",
 });
 
-// A humanist sans with calligraphic roots: carries the logo's tracked
-// subline in caps and stays readable as body text.
-const ui = Ysabeau_Office({
+// A sturdy, regular-width grotesque. Labels and UI are set in normal case at
+// normal spacing: thin, widely tracked caps read as generic and are not used.
+const ui = Onest({
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: "variable",
-  style: ["normal", "italic"],
   variable: "--font-ui-face",
   display: "swap",
 });

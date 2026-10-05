@@ -81,8 +81,9 @@ export default function Motion() {
         const list = section.querySelector<HTMLElement>(".credits__list");
         if (!list) return;
         section.dataset.rolling = "true";
-        // From just below the fold until the last names rest mid-screen.
-        const travel = () => list.offsetHeight + window.innerHeight * 0.3;
+        // From just below the fold until the last name rests low on screen,
+        // so the end card follows the credits without a blank gap.
+        const travel = () => list.offsetHeight + window.innerHeight * 0.1;
         const size = () => {
           section.style.height = `${travel() + window.innerHeight}px`;
         };
@@ -91,7 +92,7 @@ export default function Motion() {
           list,
           { y: () => window.innerHeight * 0.9 },
           {
-            y: () => -list.offsetHeight + window.innerHeight * 0.6,
+            y: () => -list.offsetHeight + window.innerHeight * 0.8,
             ease: "none",
             scrollTrigger: {
               trigger: section,
